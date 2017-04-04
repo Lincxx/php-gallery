@@ -7,6 +7,24 @@
                 Blank Page
                 <small>Subheading</small>
             </h1>
+
+
+            <?php
+
+
+                $result_set = User::find_all_users();
+
+                while($row = mysqli_fetch_array($result_set)){
+                    echo $row['username'] . '<br>';
+                }
+
+                $get_user = User::find_user_by_id(1);
+                while($row = mysqli_fetch_array($get_user)){
+                    echo $row['username'] . '<br>';
+                }
+
+            ?>
+
             <ol class="breadcrumb">
                 <li>
                     <i class="fa fa-dashboard"></i>  <a href="index.html">Dashboard</a>
